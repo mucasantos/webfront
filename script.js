@@ -5,7 +5,7 @@ Introdução Javascript
 */
 
 var nome = "Samuel"
-let idade = 45
+let idade = 45.8
 const anoNascimento = 1977
 let idadeEsposa = "45"
 let idadeString = "45"
@@ -14,14 +14,52 @@ let idadeString = "45"
 == comparar se é igual
 === comparar se é exatamente igual
 */
+let num = 98 
+const pi = 3.14
 
-let listaCompras = []
+console.log(typeof(nome))
 
-listaCompras.push("Maça")
+switch (num) {
+    case 7:
+        console.log("Sete")
+        break;
+    case 5:
+        console.log("Cinco")
+        break;
+    case 3:
+        console.log("Tres")
+        break;
+    case 4:
+        console.log("quatro")
+        break;
+
+    default:
+        console.log("Não sei....")
+        break;
+}
+
+//Array
+/*
+Acessamos o array fazendo ref ao index
+*/
+
+let lista = [1,2,3,4,5,6]
+
+// && 
+// ||
+// !
+
+for (let index = 0; index < lista.length + 1 ; index++) {
+    const element = lista[index];
+
+    console.log(element)
+    
+}
 
 
-console.log(listaCompras.length)
-console.log(listaCompras)
+
+
+
 
 
 
