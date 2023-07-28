@@ -1,19 +1,44 @@
-/*
-Git básico
-Introdução Javascript
+const titulo = document.getElementById("titulo")
+const nomeInput = document.getElementById("nome")
+const resultado = document.getElementById("resultado")
 
-*/
+
+titulo.textContent = "Senai Cotia 2023"
+
+function salvar() {
+
+    resultado.textContent = nomeInput.value
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//Git básico
+//Introdução Javascript
+
 
 var nome = "Samuel"
 let idade = 45.8
 const anoNascimento = 1977
 let idadeEsposa = "45"
 let idadeString = "45"
-/*
-= atribuição
-== comparar se é igual
-=== comparar se é exatamente igual
-*/
+
+//= atribuição
+//== comparar se é igual
+//=== comparar se é exatamente igual
+
 let num = 98 
 const pi = 3.14
 
@@ -39,9 +64,9 @@ switch (num) {
 }
 
 //Array
-/*
-Acessamos o array fazendo ref ao index
-*/
+
+//Acessamos o array fazendo ref ao index
+
 
 let lista = [1,2,3,4,5,6]
 
@@ -55,11 +80,7 @@ for (let index = 0; index < lista.length + 1 ; index++) {
     console.log(element)
     
 }
-
-
-
-
-
+*/
 
 
 
