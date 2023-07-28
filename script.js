@@ -1,13 +1,26 @@
-const titulo = document.getElementById("titulo")
-const nomeInput = document.getElementById("nome")
-const resultado = document.getElementById("resultado")
+/*
+Quinta:basico javascript /  getElementbyId
 
+*/
+
+const titulo = document.getElementById("titulo")
+//Inputs
+const nomeInput = document.getElementById("nome")
+const emailInput = document.getElementById("email")
+const foneInput = document.getElementById("telefone")
+
+//Outputs
+const resultNome = document.getElementById("result-nome")
+const resultEmail = document.getElementById("result-email")
+const resultFone = document.getElementById("result-fone")
 
 titulo.textContent = "Senai Cotia 2023"
 
 function salvar() {
 
-    resultado.textContent = nomeInput.value
+    resultNome.textContent = nomeInput.value
+    resultEmail.textContent = emailInput.value
+    resultFone.textContent = foneInput.value
 
 }
 
