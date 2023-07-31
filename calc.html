@@ -8,18 +8,21 @@
 </head>
 <body>
 
-    Número1: <input id="number1" type="number">
+    Número1: <input id="number1" type="text">
     Número2: <input id="number2" type="number">
-    Número2: <input id="number2" type="time">
 
     <div class="container">
-        <button onclick="calculo('somar')">Somar</button>
-        <button onclick="calculo('subtrair')">Subtrair</button>
-        <button onclick="calculo('dividir')">Dividir</button>
-        <button onclick="calculo('multiplicar')">Multiplicar</button>
-        <button onclick="calculo('exponencial')">Exponencial</button>
+        <button onclick="calculo('+')">Somar</button>
+        <button onclick="calculo('-')">Subtrair</button>
+        <button onclick="calculo('/')">Dividir</button>
+        <button onclick="calculo('*')">Multiplicar</button>
+        <button onclick="calculo('%')">Resto</button>
+        <button onclick="calculo('**')">Exponencial</button>
+        <button onclick="calculo('ola')">Erro</button>
     </div>
     <h2 id="resultado">Resultado</h2>
+
+    <div class="show" id="status"></div>
 
     <script src="calc.js"></script>
 </body>

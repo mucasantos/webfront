@@ -2,39 +2,40 @@ const numberOne = document.getElementById("number1")
 const numberTwo = document.getElementById("number2")
 
 const resultado = document.getElementById("resultado")
+const statusDiv = document.getElementById("status")
 
 
 function calculo(operacao) {
 
-    switch (operacao) {
-        case "somar":
-            resultado.textContent =
-                Number(numberOne.value)
-                + Number(numberTwo.value)
-            break;
 
-        case "dividir":
-            resultado.textContent =
-                Number(numberOne.value)
-                / Number(numberTwo.value)
-            break;
+    try {
+       const finalResult = eval("Number(numberOne.value)" + operacao + "Number(numberTwo.value)")
+        if (isNaN(finalResult) || !isFinite(finalResult)) {
+            statusDiv.style.backgroundColor = "red"
+            statusDiv.style.borderRadius = "15px"
 
-        case "subtrair":
-            resultado.textContent =
-                Number(numberOne.value)
-                - Number(numberTwo.value)
-            break;
+            alert("Algo Errado aconteceu...")
+            return
+        }
+        resultado.textContent = finalResult
 
-        case "multiplicar":
-            resultado.textContent =
-                Number(numberOne.value)
-                * Number(numberTwo.value)
-            break;
-        default:
-            alert("Não conheço ... :0(")
+/*
+Menor q 0 ==> cor vermelha
+maior q 50 ==> cor azul
+maior q 100 ==> cor verde
+*/
 
-            break;
+
+resultado.style.color = "blue"
+
+
+    } catch (error) {
+        alert(error)
     }
+
+
+
+
 
 }
 
