@@ -2,20 +2,38 @@
 //usar o innerHTML
 //Usar a concatenação de Javascript
 
+
+checked
+
 const titulo = document.getElementById("titulo")
 const minhaDiv = document.getElementById("minha-div")
 const buttonAdd = document.getElementById("button")
-const userName = document.getElementById("nome")
 
-let idade = 26
+const userName = document.getElementById("nome")
+const userEmail = document.getElementById("email")
+const userProfissao = document.getElementById("profissao")
+
 
 buttonAdd.addEventListener('click', () => {
 
+    const novaTag = document.createElement("div")
+    novaTag.classList.add("flip-card")
 
-    minhaDiv.innerHTML = `
-    <h2>${idade}</h2>
-    <button>Pode clicar...</button>
+    novaTag.innerHTML = `
+    
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="avatar/pig1.png" alt="Avatar" style="width:300px;height:300px;">
+              </div>
+              <div class="flip-card-back">
+                <h1>${userName.value}</h1>
+                <p>${userProfissao.value}</p>
+                <p>${userEmail.value}</p>
+              </div>
+            </div>
+          
     `
+    minhaDiv.appendChild(novaTag)
 
 })
 
