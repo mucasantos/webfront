@@ -28,14 +28,9 @@ maior q 100 ==> cor verde
 
 resultado.style.color = "blue"
 
-
     } catch (error) {
         alert(error)
     }
-
-
-
-
 
 }
 
