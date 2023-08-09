@@ -1,10 +1,18 @@
+* {
+    margin: 0;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
+.card {
+    width: 150px;
+    background-color: blueviolet;
+    margin: 10px;
+    padding: 5px;
+    color: white;
+}
 img {
-    height: 100px;
-    margin: 30px;
-    border-radius: 5px;
+    width: 100%;
 }

@@ -4,7 +4,7 @@ const userName = document.getElementById("name")
 const prod = document.getElementById("product")
 const color = document.getElementById("cor")
 const button = document.getElementById("btn")
-const main =  document.getElementById("main")
+const main = document.getElementById("main")
 
 let currentData = new Date(Date.now())
 
@@ -16,8 +16,8 @@ a idade em meses e anos da pessoa. 45 anos e 11 meses
 
 //Trabalhando com listas de objetos
 
-const rickNmorty = 
-        [
+const rickNmorty =
+    [
         {
             "id": 1,
             "name": "Rick Sanchez",
@@ -685,11 +685,20 @@ const rickNmorty =
 
 
 for (let index = 0; index < rickNmorty.length; index++) {
-    const urlImage = rickNmorty[index].image;
+    const { image, name, gender,
+         species, status, origin } = rickNmorty[index];
 
     let myDiv = document.createElement('div')
-    myDiv.innerHTML = `<img src="${urlImage}" alt="">`
-
+    myDiv.classList.add('card')
+    myDiv.innerHTML = `
+    <img src="${image}" alt="">
+    <h5>${name}</h5>
+    <h5>${gender}</h5>
+    <h5>${species}</h5>
+    <h5>${status}</h5>
+    <h5>${origin.name}</h5>
+    
+    `
     main.appendChild(myDiv)
 }
 
