@@ -28,9 +28,11 @@ const person = {
         const currentData = new Date(Date.now())
         return currentData.getFullYear() - this.born       
     }
-
 }
-
+/*
+Melhorar o objeto acima, de modo que o calcAge retorne 
+a idade em meses e anos da pessoa. 45 anos e 11 meses
+*/
 
 
 let produto = {}
@@ -47,16 +49,11 @@ button.addEventListener('click', ()=>{
     produtos.push(produto)
     console.log(produtos)
 
-    console.log(person.calcAge())
+    userName.textContent = person.calcAge()
    
    
-   
-
-
-
 })
 
-userName.textContent= person.name
 
 
 
