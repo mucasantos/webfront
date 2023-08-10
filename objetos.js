@@ -681,27 +681,53 @@ const rickNmorty =
             "created": "2017-11-04T22:34:53.659Z"
         }
     ]
+  
+    mountCards(rickNmorty)
+
+    function mountCards(data) {
+        for (let index = 0; index < data.length; index++) {
+            const { id, image, name, gender,
+                species, status, origin } = data[index];
+        
+           let myDiv = document.createElement('div')
+            myDiv.classList.add('card')
+
+            myDiv.innerHTML = `
+            <img src="${image}" alt="">
+            <h5>${name}</h5>
+            <h5>${gender}</h5>
+            <h5>${species}</h5>
+            <h5>${status}</h5>
+            <h5>${origin.name}</h5>
+            <button id = "${id}">Favorito</button>
+            `
+            main.appendChild(myDiv)
+        }
+      
+    }
 
 
+let favorites = []
 
-for (let index = 0; index < rickNmorty.length; index++) {
-    const { image, name, gender,
-         species, status, origin } = rickNmorty[index];
+const btnFav = document.querySelectorAll('button')
 
-    let myDiv = document.createElement('div')
-    myDiv.classList.add('card')
-    myDiv.innerHTML = `
-    <img src="${image}" alt="">
-    <h5>${name}</h5>
-    <h5>${gender}</h5>
-    <h5>${species}</h5>
-    <h5>${status}</h5>
-    <h5>${origin.name}</h5>
-    
-    `
-    main.appendChild(myDiv)
+for (let index = 0; index < btnFav.length; index++) {
+
+    btnFav[index].addEventListener('click', () => {
+
+     const myFav =   rickNmorty.find(element => element.id == btnFav[index].id )
+        favorites.push(myFav)
+    })
+    // document.getElementById(btnFav[index].value).addEventListener('click', console.log("ok"))
+
 }
 
+document.getElementById("favorites").addEventListener('click', ()=> {
+
+    
+    mountCards(favorites);
+
+})
 
 
 
@@ -715,7 +741,7 @@ for (let index = 0; index < rickNmorty.length; index++) {
 
 
 
-
+/*
 button.addEventListener('click', () => {
     produto = {
         //Gera id randomico e arredonda
@@ -729,6 +755,7 @@ button.addEventListener('click', () => {
     userName.textContent = person.calcAge(person.born)
 })
 
+*/
 
 
 
