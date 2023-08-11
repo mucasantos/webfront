@@ -681,18 +681,16 @@ const rickNmorty =
             "created": "2017-11-04T22:34:53.659Z"
         }
     ]
-  
-    mountCards(rickNmorty)
+ 
+function mountCards(data) {
+       for (let index = 0; index < data.length; index++) {
+        const { id, image, name, gender,
+            species, status, origin } = data[index];
 
-    function mountCards(data) {
-        for (let index = 0; index < data.length; index++) {
-            const { id, image, name, gender,
-                species, status, origin } = data[index];
-        
-           let myDiv = document.createElement('div')
-            myDiv.classList.add('card')
+        let myDiv = document.createElement('div')
+        myDiv.classList.add('card')
 
-            myDiv.innerHTML = `
+        myDiv.innerHTML = `
             <img src="${image}" alt="">
             <h5>${name}</h5>
             <h5>${gender}</h5>
@@ -701,32 +699,36 @@ const rickNmorty =
             <h5>${origin.name}</h5>
             <button id = "${id}">Favorito</button>
             `
-            main.appendChild(myDiv)
-        }
-      
+        main.appendChild(myDiv)
     }
+}
 
-
+mountCards(rickNmorty)
 let favorites = []
 
+//Lista de elementos
 const btnFav = document.querySelectorAll('button')
 
 for (let index = 0; index < btnFav.length; index++) {
-
     btnFav[index].addEventListener('click', () => {
-
-     const myFav =   rickNmorty.find(element => element.id == btnFav[index].id )
+        const myFav = rickNmorty.find(element => element.id == btnFav[index].id)
         favorites.push(myFav)
     })
-    // document.getElementById(btnFav[index].value).addEventListener('click', console.log("ok"))
-
 }
 
-document.getElementById("favorites").addEventListener('click', ()=> {
-
-    
+document.getElementById("favorites").addEventListener('click', () => {
+    if (favorites.length === 0) {
+        alert("Sem favoritos!")
+        return
+    }
+    //Apagar a tela para mostrar apenas os favoritos
+    main.innerHTML = ''
     mountCards(favorites);
+})
 
+document.getElementById("todos").addEventListener('click', () => {
+    main.innerHTML = ""
+    mountCards(rickNmorty);
 })
 
 
