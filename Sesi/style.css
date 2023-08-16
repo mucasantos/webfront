@@ -1,6 +1,7 @@
 .container{
-    height: 100px;
-    width: 100px;
+    position: absolute;
+    height: 50px;
+    width: 50px;
     background-color: rgb(111, 14, 111);
     border-radius: 10px;
 }
