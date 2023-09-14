@@ -1,0 +1,8 @@
+.my-btn{
+    color: blueviolet;
+    background-color: bisque;
+}
+
+button:hover {
+    background-color: aquamarine;
+}

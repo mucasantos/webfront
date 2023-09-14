@@ -15,7 +15,7 @@ a idade em meses e anos da pessoa. 45 anos e 11 meses
 */
 
 //Trabalhando com listas de objetos
-
+/*
 const rickNmorty =
     [
         {
@@ -681,29 +681,39 @@ const rickNmorty =
             "created": "2017-11-04T22:34:53.659Z"
         }
     ]
- 
+*/
+
+    const API_URL_PAGE = "http://10.92.199.27:3001/produtos"
+
+ fetch(API_URL_PAGE).then(
+        resposta => {
+            return resposta.json();
+        }
+    ).then(
+        data => {
+            mountCards(data)
+        }
+    )
 function mountCards(data) {
        for (let index = 0; index < data.length; index++) {
-        const { id, image, name, gender,
-            species, status, origin } = data[index];
+        const { id, title, price, image,
+            description } = data[index];
 
         let myDiv = document.createElement('div')
         myDiv.classList.add('card')
 
         myDiv.innerHTML = `
             <img src="${image}" alt="">
-            <h5>${name}</h5>
-            <h5>${gender}</h5>
-            <h5>${species}</h5>
-            <h5>${status}</h5>
-            <h5>${origin.name}</h5>
+            <h5>${title}</h5>
+            <h5>${price}</h5>
+            <h5>${description}</h5>           
             <button id = "${id}">Favorito</button>
             `
         main.appendChild(myDiv)
     }
 }
 
-mountCards(rickNmorty)
+//mountCards(rickNmorty)
 let favorites = []
 
 //Lista de elementos
@@ -730,16 +740,6 @@ document.getElementById("todos").addEventListener('click', () => {
     main.innerHTML = ""
     mountCards(rickNmorty);
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
