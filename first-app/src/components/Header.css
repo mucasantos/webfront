@@ -1,0 +1,22 @@
+h1 {
+  background-color: blueviolet;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+  width: 150px;
+  background-color: bisque;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+img {
+  width: 100%;
+  border-radius: 50%;
+  min-width: 80px;
+}
