@@ -1,0 +1,23 @@
+.card {
+  width: 250px;
+  background-color: rgb(237, 230, 220);
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
