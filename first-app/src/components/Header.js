@@ -1,6 +1,6 @@
 //Cuidado com o end absoluto!
 import "./Header.css";
-import users from "../users.json";
+import {users} from "../users";
 
 function Header() {
   //Variáveis
